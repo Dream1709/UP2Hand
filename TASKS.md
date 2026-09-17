@@ -49,6 +49,6 @@
 - [x] 8.3 หน้ารายชื่อสมาชิก พร้อมปุ่มกดระงับบัญชี (`is_banned = true`)
 
 ## Phase 9: Final Polish & Audit
-- [ ] 9.1 ปรับแต่ง Responsive ให้รองรับทั้ง Desktop และ Mobile
-- [ ] 9.2 ทดสอบรัน `npm run build` และเคลียร์ TypeScript / Linter Warnings ทั้งหมด
+- [x] 9.1 ปรับแต่ง Responsive ให้รองรับทั้ง Desktop และ Mobile
+- [x] 9.2 ทดสอบรัน `npm run build` และเคลียร์ TypeScript / Linter Warnings ทั้งหมด
 - [ ] 9.3 ทำ Git Tag หรือ Final Release Commit

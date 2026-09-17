@@ -32,6 +32,15 @@ interface AdminItem {
   member: { name: string; email: string } | null;
 }
 
+interface RawItem {
+  item_id: number;
+  title: string;
+  price: number;
+  status: string;
+  created_at: string;
+  member: { name: string; email: string }[] | { name: string; email: string } | null;
+}
+
 interface AdminMember {
   member_id: string;
   name: string;
@@ -64,7 +73,7 @@ async function getAdminData() {
       .limit(50),
   ]);
 
-  const formattedItems: AdminItem[] = (items || []).map((item: any) => ({
+  const formattedItems: AdminItem[] = (items as RawItem[] || []).map((item) => ({
     item_id: item.item_id,
     title: item.title,
     price: item.price,
@@ -73,7 +82,7 @@ async function getAdminData() {
     member: Array.isArray(item.member) ? item.member[0] : item.member,
   }));
 
-  return { items: formattedItems, members: members || [] };
+  return { items: formattedItems, members: (members as AdminMember[]) || [] };
 }
 
 export default async function AdminPage() {

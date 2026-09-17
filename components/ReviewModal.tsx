@@ -6,15 +6,12 @@ import { createClient } from "@/lib/supabase/client";
 interface ReviewModalProps {
   isOpen: boolean;
   onClose: () => void;
-  itemId: number;
   revieweeId: string;
   itemTitle: string;
   isBuyer: boolean;
 }
 
-export default function ReviewModal({ isOpen, onClose, itemId, revieweeId, itemTitle, isBuyer }: ReviewModalProps) {
-  if (!isOpen) return null;
-
+export default function ReviewModal({ isOpen, onClose, revieweeId, itemTitle, isBuyer }: ReviewModalProps) {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -54,6 +51,8 @@ export default function ReviewModal({ isOpen, onClose, itemId, revieweeId, itemT
     setComment("");
     setIsSubmitting(false);
   };
+
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
@@ -95,7 +94,7 @@ export default function ReviewModal({ isOpen, onClose, itemId, revieweeId, itemT
                     onClick={() => setRating(star)}
                     className="p-1 text-yellow-400 hover:scale-110 transition-transform"
                     aria-label={`${star} ดาว`}
-                    aria-checked={rating === star}
+                    aria-pressed={rating === star}
                   >
                     <svg
                       className={`h-10 w-10 ${rating >= star ? "fill-current" : ""}`}

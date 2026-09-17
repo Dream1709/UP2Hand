@@ -2,7 +2,50 @@ import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
 import ChatListClient from "./ChatListClient";
 
-async function getConversations(userId: string) {
+interface ConversationItem {
+  item_id: number;
+  title: string;
+  price: number;
+  status: string;
+  member_id: string;
+  item_images: { image_url: string }[];
+}
+
+interface ConversationMember {
+  member_id: string;
+  name: string;
+  avatar_url: string | null;
+}
+
+interface ConversationMessage {
+  message_id: number;
+  message_text: string;
+  sender_id: string;
+  created_at: string;
+}
+
+interface ConversationData {
+  conversation_id: number;
+  created_at: string;
+  item_id: number;
+  member_id: string;
+  item: ConversationItem | ConversationItem[] | null;
+  member: ConversationMember | ConversationMember[] | null;
+  messages: ConversationMessage[] | null;
+}
+
+interface FormattedConversation {
+  conversation_id: number;
+  item_id: number;
+  member_id: string;
+  created_at: string;
+  item: ConversationItem | null;
+  member: ConversationMember | null;
+  last_message: ConversationMessage | null;
+  unread_count: number;
+}
+
+async function getConversations(userId: string): Promise<FormattedConversation[]> {
   const supabase = await createClient();
 
   const { data, error } = await supabase
@@ -40,15 +83,15 @@ async function getConversations(userId: string) {
     return [];
   }
 
-  return (data as unknown as any[])?.map((conv) => {
+  return (data as unknown as ConversationData[])?.map((conv) => {
     const item = Array.isArray(conv.item) ? conv.item[0] : conv.item;
     const member = Array.isArray(conv.member) ? conv.member[0] : conv.member;
     const sortedMessages = (conv.messages || []).sort(
-      (a: any, b: any) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+      (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
     );
     const lastMessage = sortedMessages[0] || null;
     const unreadCount = sortedMessages.filter(
-      (m: any) => m.sender_id !== userId
+      (m) => m.sender_id !== userId
     ).length;
 
     return {
