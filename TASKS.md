@@ -10,8 +10,8 @@
 ## Phase 2: Authentication & User Profile
 - [x] 2.1 ทำ Navbar/Header พร้อมปุ่ม Login และโลโก้สไตล์ UP 2 Hand
 - [x] 2.2 ทำ Login Modal / Screen สำหรับเข้าสู่ระบบด้วย UP Mail (Google OAuth)
-- [ ] 2.3 ตั้งค่า Supabase Auth Flow (Google OAuth เป็นหลัก) และตัวกรองโดเมน `@up.ac.th`
-- [ ] 2.4 ทำ Auth Callback Route (`/auth/callback`)
+- [x] 2.3 ตั้งค่า Supabase Auth Flow (Google OAuth เป็นหลัก) และตัวกรองโดเมน `@up.ac.th`
+- [x] 2.4 ทำ Auth Callback Route (`/auth/callback`)
 - [ ] 2.5 ทำ Middleware ตรวจสอบ Session และสถานะ `is_banned`
 
 ## Phase 3: Feed & Browse (หน้าแรก)
