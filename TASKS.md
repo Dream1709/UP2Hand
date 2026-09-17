@@ -51,4 +51,4 @@
 ## Phase 9: Final Polish & Audit
 - [x] 9.1 ปรับแต่ง Responsive ให้รองรับทั้ง Desktop และ Mobile
 - [x] 9.2 ทดสอบรัน `npm run build` และเคลียร์ TypeScript / Linter Warnings ทั้งหมด
-- [ ] 9.3 ทำ Git Tag หรือ Final Release Commit
+- [x] 9.3 ทำ Git Tag หรือ Final Release Commit
