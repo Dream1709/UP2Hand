@@ -4,7 +4,7 @@
 - [x] 1.1 สร้าง Next.js + Tailwind v4 + ติดตั้ง @supabase/supabase-js @supabase/ssr
 - [x] 1.2 วางไฟล์ `supabase/schema.sql` (จากโครงสร้าง 6 ตารางที่เราสรุปไว้)
 - [x] 1.3 สร้างไฟล์ `.env.local` และ `.env.example`
-- [ ] 1.4 สร้าง Supabase Client utilities (`lib/supabase/client.ts`, `server.ts`)
+- [x] 1.4 สร้าง Supabase Client utilities (`lib/supabase/client.ts`, `server.ts`, `middleware.ts`)
 - [ ] 1.5 สร้าง TypeScript Interfaces สำหรับฐานข้อมูล (`types/database.ts`)
 
 ## Phase 2: Authentication & User Profile
