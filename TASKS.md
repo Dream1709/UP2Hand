@@ -12,7 +12,7 @@
 - [x] 2.2 ทำ Login Modal / Screen สำหรับเข้าสู่ระบบด้วย UP Mail (Google OAuth)
 - [x] 2.3 ตั้งค่า Supabase Auth Flow (Google OAuth เป็นหลัก) และตัวกรองโดเมน `@up.ac.th`
 - [x] 2.4 ทำ Auth Callback Route (`/auth/callback`)
-- [ ] 2.5 ทำ Middleware ตรวจสอบ Session และสถานะ `is_banned`
+- [x] 2.5 ทำ Middleware ตรวจสอบ Session และสถานะ `is_banned`
 
 ## Phase 3: Feed & Browse (หน้าแรก)
 - [ ] 3.1 สร้างคอมโพเนนต์ `ItemCard` (รูปภาพ, ชื่อ, ราคา, สถานะ, วันที่)
