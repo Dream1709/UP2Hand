@@ -8,7 +8,7 @@
 - [x] 1.5 สร้าง TypeScript Interfaces สำหรับฐานข้อมูล (`types/database.ts`)
 
 ## Phase 2: Authentication & User Profile
-- [ ] 2.1 ทำ Navbar/Header พร้อมปุ่ม Login และโลโก้สไตล์ UP 2 Hand
+- [x] 2.1 ทำ Navbar/Header พร้อมปุ่ม Login และโลโก้สไตล์ UP 2 Hand
 - [ ] 2.2 ทำ Login Modal / Screen สำหรับเข้าสู่ระบบด้วย UP Mail (Google OAuth)
 - [ ] 2.3 ตั้งค่า Supabase Auth Flow (Google OAuth เป็นหลัก) และตัวกรองโดเมน `@up.ac.th`
 - [ ] 2.4 ทำ Auth Callback Route (`/auth/callback`)
