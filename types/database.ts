@@ -57,9 +57,14 @@ export interface ItemWithImages extends Item {
   item_images: ItemImage[]
 }
 
+export interface SellerProfile extends Pick<Member, 'member_id' | 'name' | 'avatar_url' | 'role' | 'email' | 'created_at'> {
+  avg_rating: number
+  review_count: number
+}
+
 export interface ItemWithSeller extends Item {
   item_images: ItemImage[]
-  member: Pick<Member, 'member_id' | 'name' | 'avatar_url' | 'role'>
+  member: SellerProfile
 }
 
 export interface ConversationWithDetails extends Conversation {
