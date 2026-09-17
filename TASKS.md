@@ -5,7 +5,7 @@
 - [x] 1.2 วางไฟล์ `supabase/schema.sql` (จากโครงสร้าง 6 ตารางที่เราสรุปไว้)
 - [x] 1.3 สร้างไฟล์ `.env.local` และ `.env.example`
 - [x] 1.4 สร้าง Supabase Client utilities (`lib/supabase/client.ts`, `server.ts`, `middleware.ts`)
-- [ ] 1.5 สร้าง TypeScript Interfaces สำหรับฐานข้อมูล (`types/database.ts`)
+- [x] 1.5 สร้าง TypeScript Interfaces สำหรับฐานข้อมูล (`types/database.ts`)
 
 ## Phase 2: Authentication & User Profile
 - [ ] 2.1 ทำ Navbar/Header พร้อมปุ่ม Login และโลโก้สไตล์ UP 2 Hand
