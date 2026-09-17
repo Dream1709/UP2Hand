@@ -44,6 +44,8 @@ export interface Message {
   created_at: string
 }
 
+export type MessageId = number | `temp-${string}`;
+
 export interface Review {
   review_id: number
   reviewer_id: string
