@@ -17,7 +17,7 @@
 ## Phase 3: Feed & Browse (หน้าแรก)
 - [x] 3.1 สร้างคอมโพเนนต์ `ItemCard` (รูปภาพ, ชื่อ, ราคา, สถานะ, วันที่)
 - [x] 3.2 สร้าง Skeleton Loading และ Empty State สำหรับรายการสินค้า
-- [ ] 3.3 ทำหน้าแรกดึงรายการสินค้าล่าสุดจากตาราง `items` (พร้อม fallback mock 8 ชิ้น)
+- [x] 3.3 ทำหน้าแรกดึงรายการสินค้าล่าสุดจากตาราง `items` (พร้อม fallback mock 8 ชิ้น)
 - [ ] 3.4 ทำช่อง Search ค้นหาชื่อสินค้า พร้อมระบบ Debounce 300ms
 
 ## Phase 4: Item Details & Seller Info
