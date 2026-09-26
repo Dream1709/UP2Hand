@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ลงขายสินค้า - UP 2 Hand</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css" />
+    <style>
+      body {
+        font-family: 'Prompt', sans-serif;
+        background-color: #f8fafc;
+        margin: 0;
+        padding: 0;
+      }
+      .form-container {
+        max-width: 680px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+      .form-card {
+        background: #ffffff;
+        border-radius: 1.5rem;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        padding: 2rem;
+      }
+    </style>
+  </head>
+  <body class="text-slate-800 min-h-screen flex flex-col antialiased">
+
+    <!-- Navbar -->
+    <header class="bg-white border-b border-purple-100 sticky top-0 z-50">
+      <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
+        <a href="/" class="inline-flex items-center gap-2 text-slate-600 hover:text-purple-700 font-medium text-sm transition">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0" style="width:20px;height:20px;">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          <span>ยกเลิก / กลับหน้าหลัก</span>
+        </a>
+        <a href="/" class="font-bold text-lg text-purple-900">
+          UP <span class="text-amber-500">2 Hand</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Form Container -->
+    <main class="form-container flex-grow w-full">
+      <div class="form-card">
+        
+        <div class="border-b border-slate-100 pb-5 mb-6">
+          <h1 class="text-2xl font-bold text-slate-900">ลงขายของมือสอง</h1>
+          <p class="text-xs text-slate-400 mt-1">กรอกรายละเอียดสินค้าเพื่อส่งต่อให้นิสิตและบุคลากร มพ.</p>
+        </div>
+
+        <form id="sell-form" class="space-y-6">
+          
+          <!-- Image Upload & Preview -->
+          <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-2">
+              รูปภาพสินค้า <span class="text-red-500">*</span>
+            </label>
+            <div 
+              id="upload-dropzone"
+              class="border-2 border-dashed border-purple-200 hover:border-purple-400 bg-purple-50/40 rounded-2xl p-6 text-center cursor-pointer transition relative overflow-hidden group min-h-[160px] flex flex-col items-center justify-center"
+            >
+              <input 
+                type="file" 
+                id="image-input" 
+                accept="image/*" 
+                class="absolute inset-0 opacity-0 cursor-pointer w-full h-full z-10"
+              />
+              <div id="upload-placeholder" class="space-y-2 pointer-events-none">
+                <div class="w-12 h-12 mx-auto rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-xl">
+                  📷
+                </div>
+                <p class="text-sm font-medium text-slate-700">คลิกเพื่ออัปโหลดรูปภาพสินค้า</p>
+                <p class="text-xs text-slate-400">รองรับไฟล์ PNG, JPG (ขนาดไม่เกิน 5MB)</p>
+              </div>
+              <img 
+                id="preview-img" 
+                src="" 
+                alt="Preview" 
+                class="hidden w-full max-h-72 object-contain mx-auto rounded-xl"
+              />
+            </div>
+          </div>
+
+          <!-- Product Title -->
+          <div>
+            <label for="title" class="block text-sm font-semibold text-slate-700 mb-2">
+              ชื่อสินค้า <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="title"
+              required
+              placeholder="เช่น เสื้อช็อป ICT ไซส์ L, หนังสือแคลคูลัส 1"
+              class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-600 text-sm transition"
+            />
+          </div>
+
+          <!-- Price -->
+          <div>
+            <label for="price" class="block text-sm font-semibold text-slate-700 mb-2">
+              ราคา (บาท) <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="number"
+              id="price"
+              required
+              min="0"
+              placeholder="0"
+              class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-600 text-sm transition"
+            />
+          </div>
+
+          <!-- Description -->
+          <div>
+            <label for="description" class="block text-sm font-semibold text-slate-700 mb-2">
+              รายละเอียดและสภาพสินค้า
+            </label>
+            <textarea
+              id="description"
+              rows="4"
+              placeholder="บอกสภาพสินค้า ตำหนิ ระยะเวลาการใช้งาน หรือของแถม..."
+              class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-600 text-sm transition"
+            ></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="pt-2">
+            <button
+              type="submit"
+              id="submit-btn"
+              class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-purple-700 to-purple-800 hover:from-purple-800 hover:to-purple-900 text-amber-300 font-bold text-sm shadow-md hover:shadow-lg transition transform active:scale-[0.99] flex items-center justify-center gap-2"
+            >
+              <span>🚀</span>
+              <span>โพสต์ลงขายทันที</span>
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </main>
+
+    <script type="module" src="/src/sell.ts"></script>
+  </body>
+</html>
